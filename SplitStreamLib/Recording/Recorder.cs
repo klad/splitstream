@@ -100,7 +100,7 @@ namespace SplitStreamLib.Recording
                         else
                         {
                             var fileTime = DateTime.Now;
-                            outputFileName = fileTime.ToString("yyyy.MM.dd.Thh.mm.ss.ffffff") + ".mp3";
+                            outputFileName = fileTime.ToString("yyyy.MM.dd.THH.mm.ss.ffffff") + ".mp3";
                             fullOutputFileName = Path.Combine(GetFilePath(fileTime), outputFileName);
                             outputFile = File.OpenWrite(fullOutputFileName);
 
@@ -137,7 +137,7 @@ namespace SplitStreamLib.Recording
                 Directory.CreateDirectory(_options.OutputDirectory);
 
             var day = fileTime.ToString("yyyy.MM.dd");
-            var hour = fileTime.ToString("hh");
+            var hour = fileTime.ToString("HH");
             var path = Path.Combine(_options.OutputDirectory, day)
 ;
             if (!Directory.Exists(path))
